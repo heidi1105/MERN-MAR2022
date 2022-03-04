@@ -1,4 +1,4 @@
-#Welcome to the MERN stack with Heidi
+# Welcome to the MERN stack with Heidi
 
 ```
 const heidi = new Instructor("Heidi", "MERN");
