@@ -91,6 +91,10 @@ const greetNoOne2 = () =>{
 greet2("Heidi")
 greetNoOne2();
 
+document.getElementById("button").onClick = () =>{
+    setBackgroundColorById("paragraph", "blue")
+}
+
 
     
 //TERNARY OPERATOR

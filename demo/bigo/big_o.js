@@ -9,7 +9,7 @@ const ex1 = (arr)=>{
     }
     console.log(sum+ " , " + product)
 }
-
+// O(N) O(1)
 const ex2 = (arr) =>{
     for(let i=0; i< arr.length; i++){
         for(let j=0; j< arr.length; j++){
@@ -17,7 +17,7 @@ const ex2 = (arr) =>{
         }
     }
 }
-
+// O(N2)
 
 const ex3 = (arr) =>{
     for(let i=0; i< arr.length; i++){
@@ -26,6 +26,7 @@ const ex3 = (arr) =>{
         }
     }
 }
+// O(N2)
 
 const ex4 = (arr1, arr2)=>{
     for(let i=0; i< arr1.length; i++){
@@ -34,6 +35,8 @@ const ex4 = (arr1, arr2)=>{
         }
     }    
 }
+// O(MN)
+
 
 const ex5 = (arr1, arr2)=>{
     for(let i=0; i< arr1.length; i++){
@@ -45,3 +48,4 @@ const ex5 = (arr1, arr2)=>{
     }    
 }
 
+// O(N2)
