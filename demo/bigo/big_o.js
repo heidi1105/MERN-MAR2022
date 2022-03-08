@@ -35,7 +35,7 @@ const ex4 = (arr1, arr2)=>{
         }
     }    
 }
-// O(MN)
+// O(ab)
 
 
 const ex5 = (arr1, arr2)=>{
@@ -48,4 +48,4 @@ const ex5 = (arr1, arr2)=>{
     }    
 }
 
-// O(N2)
+// O(ab)
