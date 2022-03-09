@@ -5,6 +5,11 @@ class Pet{
         this.health = 100
         this.abilities = ["sleep", "eat", "breathe", "being cute"]
     }
+    
+    sleepArr = () =>{
+        console.log("testing")
+    }
+
     sleep(){
         this.health +=5
         // console.log(this.nickname + " is sleeping1")
@@ -80,5 +85,5 @@ const fish = new Food("fish", 10)
 const chips = new Snack("chips", 5)
 const cable = new Toy("cable", 20)
 
-pepper.eat(pikachu)
+pepper.sleepArr()
 console.log(pepper)
