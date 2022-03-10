@@ -29,13 +29,13 @@ function App() {
       <TVShow title="Inventing Anna" episodes={9} hashtags={["AnnaDelvey", "scammer", "fraud"]}/>
       <TVShowObj show={show1} /> */}
 
-      {/* <Container>
-        <Header />
+      <Container>
+        <Header text="a"/>
         <Main />
         <Footer />
-      </Container> */}
+      </Container>
 
-      <States />
+      {/* <States /> */}
 
     </div>
   );
