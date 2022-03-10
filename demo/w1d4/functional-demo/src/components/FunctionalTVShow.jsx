@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FunctionTVShow = (props) => {
+const FunctionalTVShow = (props) => {
   return (
     <fieldset>
     <legend> Functional Component TV Show</legend>
@@ -17,4 +17,4 @@ const FunctionTVShow = (props) => {
   )
 }
 
-export default FunctionTVShow
+export default FunctionalTVShow

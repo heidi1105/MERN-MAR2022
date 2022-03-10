@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const FunctionState = () => {
+const FunctionalState = () => {
     const [count, setCount] = useState(0)
     const [like, setLike] = useState(100)
 
@@ -24,4 +24,4 @@ const FunctionState = () => {
   )
 }
 
-export default FunctionState
+export default FunctionalState

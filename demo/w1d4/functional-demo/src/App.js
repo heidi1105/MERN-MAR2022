@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import ClassTVShow from './components/ClassTVShow';
-import FunctionTVShow from './components/FunctionTVShow';
+import FunctionalTVShow from './components/FunctionalTVShow';
 import ClassState from './components/ClassState';
-import FunctionState from './components/FunctionState';
+import FunctionalState from './components/FunctionalState';
 import Form from './components/Form';
 
 function App() {
@@ -12,10 +12,10 @@ function App() {
       <Form />
 
       <ClassState />
-      <FunctionState />
+      <FunctionalState />
 
       <ClassTVShow title="Friends" episodes = {235} hashtags={["TheClassic", "sit-com"]}/>
-      <FunctionTVShow title="Games of Thrones" episodes = {73} hashtags={["everyoneDies", "lastSeasonIsDisappointing", "HouseTargaryen"]}/>
+      <FunctionalTVShow title="Games of Thrones" episodes = {73} hashtags={["everyoneDies", "lastSeasonIsDisappointing", "HouseTargaryen"]}/>
     </div>
   );
 }

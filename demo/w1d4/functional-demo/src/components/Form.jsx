@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import FunctionTVShow from './FunctionTVShow'
+import FunctionalTVShow from './FunctionalTVShow'
 
 const Form = () => {
     const [title, setTitle] = useState("abc")
@@ -14,8 +14,8 @@ const Form = () => {
         <p> Title: {title}</p>
 
 
-        
-        <FunctionTVShow title={title} episodes = {235} hashtags={["TheClassic", "sit-com"]}/>
+
+        <FunctionalTVShow title={title} episodes = {235} hashtags={["TheClassic", "sit-com"]}/>
 
     </div>
   )

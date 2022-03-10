@@ -20,7 +20,7 @@ export class ClassState extends Component {
         <h3> States</h3>
         <h3> Alert </h3>
         <button onClick={()=>alert("Class component - hi")}> Alert me</button>
-        <h3> Count: {this.state.count} | Like: {this.state.like}|</h3>
+        <h3> Count: {this.state.count} | Like: {this.state.like}</h3>
         <button onClick={()=>this.setState({count: this.state.count+1})}> Increment count</button>
         <button onClick={this.handleDecrementCount}> Decrement Count</button>
         <button onClick={()=>this.setState({like: this.state.like+1})}> Increment like</button>
