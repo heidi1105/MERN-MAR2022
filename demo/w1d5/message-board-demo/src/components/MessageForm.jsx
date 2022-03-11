@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import MessageDisplay from './MessageDisplay'
+
 
 // input --> 1. import useState 2. initiate the state 3. eventHandler
 // form submission --> 
@@ -10,7 +10,7 @@ const MessageForm = (props) => {
 
     const handleSubmit =(e) =>{
         e.preventDefault()
-        props.onNewMessage(message)
+        props.onNewMessage( message)
         setMessage("")
     }
   return (
