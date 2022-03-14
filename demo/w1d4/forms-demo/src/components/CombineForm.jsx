@@ -25,18 +25,33 @@ const CombineForm = () => {
     }  
 
     const handleInput = (e) =>{
+        const errors = {...formError}
         const { name, value} = e.target
         setFormState({
             ...formState,
             [name] : value
         })
 
-        if(name === "username" && value.length > 3){
-            setFormError({
-                ...formError,
-                username : false
-            })
+        switch(name){
+            case 'username':
+                value.length<3?
+                    errors.username = "Username must be at least 3 characters. ":
+                    errors.username = ""
+            case 'age':
+                value<0?
+                    errors.age = "Age must be positive":
+                    errors.age = ""
+            case 'password':
+                value.length<8?
+                    errors.password = "Password must be at least 8 characters":
+                    errors.password = ""
+            case 'confirm':
+                value !== formState.password?
+                    errors.confirm = "Password must match" :
+                    errors.confirm = ""       
         }
+
+        setFormError(errors)
 
     }
 
@@ -52,23 +67,25 @@ const CombineForm = () => {
         <div>
             <label> Username </label>
             <input type="text" name="username" onChange={handleInput} value={formState.username}/>
-            {formError.username&&
-                <p> Username must be at least 3 characters</p>
-                }
+            <p> {formError.username}</p>
+
         </div>
         <div>
             <label> age </label>
             <input type="number" name="age" onChange={handleInput} value={formState.age}/>
+            <p> {formError.age} </p>
 
         </div>
         <div>
             <label> Password </label>
             <input type="password" name="password" onChange={handleInput} />
+            <p> {formError.password}</p>
 
         </div>
         <div>
             <label> Confirm Password </label>
             <input type="confirm" name="confirm" onChange={handleInput} />
+            <p> {formError.confirm}</p>
   
         </div>
         <button>Submit</button>
