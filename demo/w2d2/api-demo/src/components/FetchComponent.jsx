@@ -11,6 +11,7 @@ const FetchComponent = () => {
                 return response.json()
             })
             .then(jsonResponse => {
+                console.log("fetch .then function")
                 console.log(jsonResponse)
                 setPokemon(jsonResponse)
             })
@@ -20,14 +21,15 @@ const FetchComponent = () => {
     const fetchPokemonAwait = async() => {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/mew`)
         const jsonResponse = await response.json()
-        console.log(response)
+        console.log("async function")
         console.log(jsonResponse)
         setPokemon(jsonResponse)
     }
 
     const fetchPokemonAxios = () =>{
-        axios.get(`https://pokeapi.co/api/v2/pokemon/snorlax`)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/eevee`)
             .then(response =>{
+                console.log("axios function")
                 console.log(response.data)
                 setPokemon(response.data)
             })
