@@ -12,6 +12,8 @@ function App() {
     setShows([...shows, newShow]) // .push (never use .push for state)
   }
 
+
+
   const handleUpdate = (allShows) =>{
     setShows(allShows)
   }  
