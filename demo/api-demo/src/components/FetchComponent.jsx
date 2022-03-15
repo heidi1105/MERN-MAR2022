@@ -26,7 +26,7 @@ const FetchComponent = () => {
     }
 
     const fetchPokemonAxios = () =>{
-        axios.get(`https://pokeapi.co/api/v2/pokemon`)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/snorlax`)
             .then(response =>{
                 console.log(response.data)
                 setPokemon(response.data)
