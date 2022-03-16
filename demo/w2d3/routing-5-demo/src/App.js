@@ -1,9 +1,10 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Link, useHistory } from 'react-router-dom'
 import Keyword from './components/Keyword'
 import PokemonOnLoad from './components/PokemonOnLoad'
 
 function App() {
+  const history = useHistory()
 
   const About = (props) =>{
     return(
@@ -21,6 +22,11 @@ function App() {
     )
   }
 
+  const handleRedirect =() =>{
+  //  history.push("/pokemon/eevee")
+    history.goBack()
+  }
+
   return (
     <BrowserRouter>
       <h1> React Router demo</h1>
@@ -31,7 +37,8 @@ function App() {
          |
          <Link to="/search/whatever/teal">Whatever in teal</Link> 
          |
-         <Link to="/pokemon/snorlax"> Snorlax</Link> 
+         <Link to="/pokemon/snorlax"> Snorlax</Link> |
+         <button onClick={handleRedirect}> Eevee</button>
 
       </p>      
       <p> A tag: 
