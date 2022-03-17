@@ -9,18 +9,19 @@
 
 ## FORMS
 ### INPUT
-1. add state variable for the input (const [name, setName] =  useState(""))
-2. onChange for the input (onChange = {e=> setName(e.target.value)})
+1. import useState
+2. add state variable for the input (const [name, setName] =  useState(""))
+3. onChange for the input (onChange = {e=> setName(e.target.value)})
 
 ### SUBMIT
-3. add submitHandler  (with e.preventDefault())
-4. attach onSubmit = { submitHandler } for form tag
+3. add handleSubmit  (with e.preventDefault())
+4. attach eventHandler : onSubmit = { submitHandler } for form tag
 
 ### Grab API (axios)
 ```
 axios.get(`URL`)
 	.then(res=> {
-		//successful, work with the res (usually.. res.data)
+		//successful, work with the res (most of the time, we need res.data)
 	})
 	.catch(err=>{
 		//unsuccessful , got the error in the URL
@@ -33,7 +34,7 @@ useEffect(()=>{
 	// whatever you want to do when the page is loaded
 },[])
 ```
-If the variable inside the array changed, useEffect will run the function again
+If the variable inside the array changed, useEffect will re-run
 
 ## ROUTER
 #### app.js
@@ -43,7 +44,7 @@ import {BrowserRouter, Link, Switch, Route } from "react-router-dom"
 	<BrowserRouter>
 		<Link to ="/about"> About </Link>  
 		<Switch>  
-			<Route path="/about">  
+			<Route exact path="/about">  
 				<About />  
 			</Route> 
 			<Route path="/:keyword">  
@@ -55,6 +56,7 @@ import {BrowserRouter, Link, Switch, Route } from "react-router-dom"
 1. Link -- similar to a tag
 2. Switch -- if/else statement.. if it fits the first, go to the first
 3. Route -- if the path fits, render the component
+4. ****** Could add the exact to make sure they are an exact match. 
 
 
 #### To grab the params , inside component
