@@ -1,0 +1,3 @@
+db.item.insertOne({name: "TV", price: 899})
+db.item.insertOne({name: "wet food", price: 1})
+db.item.insertOne({name: "speaker", price: 1000})
