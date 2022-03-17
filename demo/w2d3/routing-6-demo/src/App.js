@@ -1,6 +1,7 @@
 import React from "react"
 import {BrowserRouter, Link, Routes, Route} from "react-router-dom"
 import Keyword from "./components/Keyword"
+import PokemonOnLoad from "./components/PokemonOnLoad"
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
         <Route path="search">
           <Route path=":keyword/:textcolor" element={<Keyword />} />
         </Route>
+        <Route path="/pokemon/:pokemonName" element={<PokemonOnLoad />} />
 
       </Routes>
 

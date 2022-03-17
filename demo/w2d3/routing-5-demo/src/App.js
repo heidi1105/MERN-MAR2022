@@ -22,10 +22,6 @@ function App() {
     )
   }
 
-  const handleRedirect =() =>{
-  //  history.push("/pokemon/eevee")
-    history.goBack()
-  }
 
   return (
     <BrowserRouter>
@@ -38,7 +34,6 @@ function App() {
          <Link to="/search/whatever/teal">Whatever in teal</Link> 
          |
          <Link to="/pokemon/snorlax"> Snorlax</Link> |
-         <button onClick={handleRedirect}> Eevee</button>
 
       </p>      
       <p> A tag: 
