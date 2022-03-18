@@ -23,7 +23,7 @@
 - `db.item.findOne({name:"toy"})` : only returns the first item 
 
 ### Update
-- `db.item.updateOnly({}, {$addToSet:{shops: {$each:["BestBuy","Amazon", "Walmart"]}}})` : Only update one item
+- `db.item.updateOne({}, {$addToSet:{shops: {$each:["BestBuy","Amazon", "Walmart"]}}})` : Only update one item
 - `db.item.updateMany({}, {$addToSet:{shops: {$each:["BestBuy","Amazon", "Walmart"]}}})` : Update multiple items by adding an array of shops using $each 
 - `db.item.update({name:"games"}, {$push: {shops: 'gamestop'}})` : add to array
 - `db.item.update({name:"games"}, {$pull: {shops: 'gamestop'}})` : remove from array
