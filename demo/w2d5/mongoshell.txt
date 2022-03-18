@@ -1,0 +1,26 @@
+db.flavor.insertOne({name: "Jasmine", price: 2.99, shop:{city: "LA", shopname:"Wanderlust" }})
+db.flavor.insertMany([{name: "Mango sticky rice", price: 1.99, shop:{city: "LA", shopname:"Wanderlust" }},{name: "pineapple", price: 3.99, shop:{city: "Any city", shopname:"Local grocery store" }}])
+db.flavor.find({name: 'Jasmine'})
+db.flavor.find({price: {$lt: 2}})
+
+db.flavor.find({$and: [{price: {$lt:2}}, {name: 'Jasmine'}]})
+
+db.flavor.findOne({name:"Jasmine"})
+
+
+db.flavor.updateMany({}, {$addToSet:{hashtag: {$each:["yummy","summer"]}}})
+
+
+db.flavor.updateMany({price:{$lt: 2}}, {$push: {hashtag: 'cheap'}})
+
+db.flavor.updateMany({price:{$gt: 2}}, {$pull: {hashtag: 'summer'}})
+
+db.flavor.updateMany({}, {$rename: {'hashtag': 'hashtags'}})
+
+db.flavor.updateMany({}, {$inc: {price: 1}})
+
+db.flavor.deleteOne({name:'Taro'})
+
+db.flavor.deleteMany({name: 'Jasmine'})
+
+db.flavor.updateMany({}, [{$unset: ['shop']}])
