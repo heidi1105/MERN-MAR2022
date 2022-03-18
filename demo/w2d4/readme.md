@@ -18,7 +18,7 @@
 ### Retreive Data from dbs
 - `db.item.find()`  : can add .pretty()
 - `db.item.find({price: {$lt: 100}})` : find all fields with the price less than 100
-- `$lt` : less than  `$gt` : greater than `$and` : multiple criteria
+- `$lt` : less than  `$gt` : greater than `$and` : fitting multiple criteria `$or` : fitting either criteria 
 - `db.item.find({$and: [{price: {$lt:100}}, {price:{$gt:10}}]})`  
 - `db.item.findOne({name:"toy"})` : only returns the first item 
 
