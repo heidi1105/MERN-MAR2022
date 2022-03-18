@@ -23,10 +23,11 @@
 - `db.item.findOne({name:"toy"})` : only returns the first item 
 
 ### Update
-- `db.item.updateOne({}, {$addToSet:{shops: {$each:["BestBuy","Amazon", "Walmart"]}}})` : Only update one item
-- `db.item.updateMany({}, {$addToSet:{shops: {$each:["BestBuy","Amazon", "Walmart"]}}})` : Update multiple items by adding an array of shops using $each 
-- `db.item.update({name:"games"}, {$push: {shops: 'gamestop'}})` : add to array
-- `db.item.update({name:"games"}, {$pull: {shops: 'gamestop'}})` : remove from array
+- `db.item.updateMany({}, {$addToSet:{shops: 'Craigslist'}})` : add one item to the array
+- `db.item.updateMany({}, {$addToSet:{shops: {$each:["BestBuy","Amazon", "Walmart"]}}})` :  adding mutiple items to the array using each
+- `db.item.updateMany({name:"games"}, {$push: {shops: 'gamestop'}})` : add to array (can be repeated)
+- `db.item.updateMany({name:"games"}, {$addToSet: {shops: 'gamestop'}})` : add to array (must be unique)
+- `db.item.updateMany({name:"games"}, {$pull: {shops: 'gamestop'}})` : remove from array
 - `db.item.updateMany({}, {$inc: {price: 1}})` : increment by 1 
 - `db.item.updateMany({}, {$rename: {'rating': 'stock'}})` : renaming the name of the field
 - 
