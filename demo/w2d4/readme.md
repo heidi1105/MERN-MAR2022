@@ -10,7 +10,7 @@
 - `db.item.drop()` : drop a table
 
 ### Documents (Fields)
-- `db.item.insert({name: "TV", price: 899, size:{length: 60, height: 50}})` 
+- `db.item.insertOne({name: "TV", price: 899, size:{length: 60, height: 50}})` 
 - `db.item.insertMany([{name: "TV2", price: 899, size:{length: 60, height: 50}},{name: "TV3", price: 899, size:{length: 60, height: 50}}])` 
 - insertMany allows you to add multiple items
 
@@ -20,10 +20,10 @@
 - `db.item.find({price: {$lt: 100}})` : find all fields with the price less than 100
 - `$lt` : less than  `$gt` : greater than `$and` : multiple criteria
 - `db.item.find({$and: [{price: {$lt:100}}, {price:{$gt:10}}]})`  
-- `db.item.findOne({name:"toy"})`
+- `db.item.findOne({name:"toy"})` : only returns the first item 
 
 ### Update
-- `db.item.update({}, {$addToSet:{shops: ["BestBuy","Amazon", "Walmart"]}})` : Only update one item
+- `db.item.updateOnly({}, {$addToSet:{shops: {$each:["BestBuy","Amazon", "Walmart"]}}})` : Only update one item
 - `db.item.updateMany({}, {$addToSet:{shops: {$each:["BestBuy","Amazon", "Walmart"]}}})` : Update multiple items by adding an array of shops using $each 
 - `db.item.update({name:"games"}, {$push: {shops: 'gamestop'}})` : add to array
 - `db.item.update({name:"games"}, {$pull: {shops: 'gamestop'}})` : remove from array
