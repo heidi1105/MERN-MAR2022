@@ -26,7 +26,6 @@ function App() {
         <Route exact path="/pets/:id/edit">
           <EditPet />
         </Route>
-
       </Switch>
     </BrowserRouter>
   );
