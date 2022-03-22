@@ -14,6 +14,7 @@ const EditPet = () => {
   const [haircolor, setHaircolor] = useState("")
   const [age, setAge] = useState(0)
   const history = useHistory()
+  const [errors, setErrors] = useState([])
 
   useEffect(()=>{
     axios.get(`http://localhost:8000/api/pets/${id}`)
@@ -33,7 +34,14 @@ const EditPet = () => {
       .then(res=>{
         history.push("/pets")
       })
-      .catch(err=>console.log(err))
+      .catch(err=>{
+        const errorResponse = err.response.data.errors
+        const errorArr = []
+        for( const key of Object.keys(errorResponse)){ // key = "petname"
+          errorArr.push(errorResponse[key]["message"]) 
+        }
+        setErrors(errorArr)
+      })
   }
 
   return (
@@ -60,6 +68,11 @@ const EditPet = () => {
         </div>
         <button> Submit</button>
       </form>
+      {
+        errors.map((err, i)=>(
+            <p key={i} style={{color:"red"}}>{err}</p>
+        ))
+      }
     </fieldset>
   )
 }

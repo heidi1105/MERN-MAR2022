@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom"
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
 import Dashboard from "./views/Dashboard"
 import Create from "./views/Create"
 import OnePet from "./views/OnePet"
@@ -10,6 +10,10 @@ function App() {
   return (
     <BrowserRouter>
       <h1> Pets DB</h1>
+      <p>
+        <Link to="/pets/new"> Create new pet</Link> |
+        <Link to="/pets"> Dashboard </Link>
+      </p>
       <Switch>
         <Route exact path="/message">
           <Message />

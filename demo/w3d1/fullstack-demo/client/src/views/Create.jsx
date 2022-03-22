@@ -12,14 +12,23 @@ const Create = () => {
   const [haircolor, setHaircolor] = useState("")
   const [age, setAge] = useState(0)
   const history = useHistory()
+  const [errors, setErrors] = useState([])
 
   const handleSubmit =(e)=>{
     e.preventDefault()
     axios.post(`http://localhost:8000/api/pets`,{petname, haircolor, age})
-      .then(res=>{
+      .then(res=>{ // successful
         history.push("/pets")
       })
-      .catch(err=>console.log(err))
+      .catch(err=>{
+        const errorResponse = err.response.data.errors
+        const errorArr = []
+        for( const key of Object.keys(errorResponse)){ // key = "petname"
+          errorArr.push(errorResponse[key]["message"]) 
+        }
+        console.log(errorArr)
+        setErrors(errorArr)
+      })
   }
 
 
@@ -47,6 +56,17 @@ const Create = () => {
         </div>
         <button> Submit</button>
       </form>
+      {
+        errors.map((err, i)=>{
+          return(
+            <p key={i} style={{color:"red"}}>{err}</p>
+        )})
+      }
+      {
+        errors.map((err, i)=>(
+            <p key={i} style={{color:"red"}}>{err}</p>
+        ))
+      }
 
     </fieldset>
   )

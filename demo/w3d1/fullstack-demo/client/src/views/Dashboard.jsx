@@ -26,7 +26,7 @@ const Dashboard = () => {
   }
 
   const handleDelete2 =(deleteId)=>{
-    axios.delete(`http://localhost:8000/api/pets/${deleteId}`)
+    axios.delete(`http://localhost:8000/api/pets/${deleteId}`) // altering the table from backend
       .then(res=>{
         const filteredList = pets.filter((pet)=>pet._id !== deleteId)
         setPets(filteredList)
