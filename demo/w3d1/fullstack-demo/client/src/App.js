@@ -4,6 +4,7 @@ import Create from "./views/Create"
 import OnePet from "./views/OnePet"
 import EditPet from "./views/EditPet"
 import Message from "./views/Message"
+import Main from "./views/Main"
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route exact path="/pets/:id/edit">
           <EditPet />
+        </Route>
+        <Route exact path="/">
+          <Main />
         </Route>
       </Switch>
     </BrowserRouter>
