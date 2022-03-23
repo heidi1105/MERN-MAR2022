@@ -1,1 +1,1 @@
-![Demo](/JobsBoard.png)
+![Demo](JobsBoard.png)
