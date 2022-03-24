@@ -4,6 +4,7 @@ import Dashboard from "./views/Dashboard"
 import CreateJob from "./views/CreateJob"
 import EditJob from "./views/EditJob"
 import OneJob from "./views/OneJob"
+import Dashboard2 from "./views/Dashboard2"
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Dashboard />
+          </Route>
+          <Route exact path="/deleteOption2">
+            <Dashboard2 />
           </Route>
           <Route exact path="/jobs/new">
             <CreateJob />

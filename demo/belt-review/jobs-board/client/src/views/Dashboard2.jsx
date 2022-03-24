@@ -6,22 +6,22 @@ import React, {useEffect, useState} from 'react'
 import axios from "axios"
 import { Link } from 'react-router-dom'
 
-const Dashboard = () => {
+const Dashboard2 = () => {
   const [jobs, setJobs] = useState()
+  const [refresh, setRefresh] = useState(true)
 
   useEffect(()=>{
     axios.get(`http://localhost:8000/api/jobs`)
       .then(res=>setJobs(res.data))
       .catch(err=>console.log(err))
-  },[])
+  },[refresh])
 
   // grab the id from html
   // use this id to delete
   const handleDelete = (deleteId)=>{
     axios.delete(`http://localhost:8000/api/jobs/${deleteId}`)
       .then(res=>{
-        const filteredJobs = jobs.filter((job)=>job._id !== deleteId)
-        setJobs(filteredJobs)
+        setRefresh(!refresh)
       })
       .catch(err=>console.log(err))
   }
@@ -51,7 +51,7 @@ const Dashboard = () => {
                     <td> {job.salary}</td>
                     <td> {job.remote?"Yes":"No"}</td>
                     <td> <Link className="btn btn-success" to={`/jobs/edit/${job._id}`}>Edit</Link></td>
-                    <td> <button className="btn btn-danger" onClick={()=>handleDelete(job._id)}>Delete (filter)</button></td>
+                    <td> <button className="btn btn-danger" onClick={()=>handleDelete(job._id)}>Delete (refresh)</button></td>
                   </tr>
                 ))
               }
@@ -65,4 +65,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard2

@@ -28,6 +28,13 @@ const CreateJob = () => {
       })
   }
 
+  const clearForm =() =>{
+    setCompany("")
+    setTitle("")
+    setSalary(70000)
+    setRemote(true)
+  }
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -52,6 +59,7 @@ const CreateJob = () => {
             onChange={e=>setRemote(e.target.checked)}/>
         </div>
         <button className='btn btn-primary btn-block'> Create a new job!</button>
+        <button type="button" className = 'btn btn-default btn-block' onClick={clearForm}> Cancel</button>
       </form>
       {
         errors.map((err, i)=>(
