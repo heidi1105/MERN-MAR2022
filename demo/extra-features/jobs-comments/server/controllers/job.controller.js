@@ -10,7 +10,7 @@ module.exports.allJobs = (req, res) => {
 
 // get one job
 module.exports.oneJob = (req, res) => {
-    Job.findOne({_id:req.params.id})
+    Job.findOne({_id:req.params.id}).populate("comments")
         .then(oneJob=>res.json(oneJob))
         .catch(err=>res.status(400).json(err))
 }

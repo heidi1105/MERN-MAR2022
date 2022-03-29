@@ -30,7 +30,7 @@ UserSchema.virtual('confirmPassword')
   .set(val => this._confirmPassword = val)
 
 UserSchema.pre('validate', (next)=>{
-    if(this.password !== this.confirmPassword){
+    if(this.password !== this._confirmPassword){
         this.invalidate('confirmPassword', 'Password must match confirm password')
     }
     next()

@@ -16,11 +16,6 @@ io.on("connection", socket => {
 
         // emit this back to the client / everyone
         io.emit('post chat', client_input)
-
     })
-
-
-
-
 })
 
