@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema
 
-const JobSchema = new mongoose.Schema({
+const JobSchema = new Schema({
     title:{
         type: String,
         required: [true, "Title is required"],
@@ -19,8 +20,12 @@ const JobSchema = new mongoose.Schema({
     remote:{
         type: Boolean,
         required: [true, "Remote option is required"]
-    }
-
+    },
+    // one job can have many comments -- array of schema, ref as "Comment", same name as the schema
+    comments:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Comment'
+    }]
 },{timestamps: true})
 
 module.exports.Job = mongoose.model('Job', JobSchema)
