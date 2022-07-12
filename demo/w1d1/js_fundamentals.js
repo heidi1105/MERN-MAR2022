@@ -1,8 +1,8 @@
 // node vs browser js
 
-// ECMA, SCOPE, HOISTING
+// ECMA, const vs let, SCOPE, HOISTING
 // console.log(nickname);
-//var nickname = "pepper" // outside the scope, globally accessible
+let nickname = "pepper" // outside the scope, globally accessible
 // console.log(nickname);
         // step 1: var nickname
         // step 2: run line 4 (console.log)
@@ -91,9 +91,9 @@ const greetNoOne2 = () =>{
 greet2("Heidi")
 greetNoOne2();
 
-document.getElementById("button").onClick = () =>{
-    setBackgroundColorById("paragraph", "blue")
-}
+// document.getElementById("button").onClick = () =>{
+//     setBackgroundColorById("paragraph", "blue")
+// }
 
 
     

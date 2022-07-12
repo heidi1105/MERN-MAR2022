@@ -38,9 +38,20 @@ const FetchComponent = () => {
 
 
     const fetchPokemonAxios2 = async() =>{
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/eevee`)
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/ditto`)
         console.log(response.data)
         setPokemon(response.data)
+    }
+
+
+    const fetchPokemonAxiosTryCatch = async()=>{
+        try{
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/mew`)
+            console.log(response.data)
+            setPokemon(response.data)
+        }catch(err){
+            console.error(err)
+        }
     }
 
 
@@ -52,6 +63,7 @@ const FetchComponent = () => {
             <button onClick={fetchPokemonAwait}> Fetch Pokemon by fetch await</button>
             <button onClick={fetchPokemonAxios}> Fetch Pokemon by AXIOS!!!!!</button>
             <button onClick={fetchPokemonAxios2}> Fetch Pokemon by AXIOS AWAIT!!!!!</button>
+            <button onClick={fetchPokemonAxiosTryCatch}> Fetch Pokemon by AXIOS AWAIT catch!!!!!</button>
 
             {pokemon ?
                 <div>

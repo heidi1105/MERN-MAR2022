@@ -23,5 +23,6 @@ const PetSchema = new mongoose.Schema({
 // module.exports = Pet
 
 // OPTION 2
+
 module.exports.Pet = mongoose.model('Pet', PetSchema)
 

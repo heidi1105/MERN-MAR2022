@@ -8,7 +8,9 @@ const MessageDisplay2 = (props) => {
         {
             props.messages.map((message, i)=>{
                 return (
+                    <div>
                     <p key={i} style={{color: message.textColor}}> {message.user} : {message.content}</p>
+                    </div>
                 )
             })
         }

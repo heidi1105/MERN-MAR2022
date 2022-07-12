@@ -14,6 +14,10 @@ const InputDisplay = (props) => {
     props.handleUpdate(filteredShows)
   }
   
+  const strikeStyle = {
+    color: 'red'
+  }
+
   return (
     <div>
       <table className="table">
@@ -30,12 +34,12 @@ const InputDisplay = (props) => {
           {
             props.shows.map((show, i)=>{
               return (
-                <tr key={i}>
+                  <tr key={i} style={{ color: show.recommended ?'red':'teal'}} >
                   <td> {i +1}</td>
-                  <td> {show.title}</td>
+                  <td > <span >{show.title}</span></td>
                   <td> {show.genre}</td>
                   <td> {show.recommended?"Yes":"No"}
-                    <input type="checkbox" checked={show.recommended}
+                    <input type="checkbox" checked={show.recommended} 
                       onChange={e => recHandler(i, e.target.checked)}
                     />
                   </td>
@@ -46,11 +50,13 @@ const InputDisplay = (props) => {
                   </td>
 
                 </tr>
+                
               )
             })
           }
         </tbody>
       </table>
+      
     </div>
   )
 }

@@ -1,3 +1,7 @@
+
+
+
+
 class Pet{
     constructor(nickname, age){
         this.nickname = nickname

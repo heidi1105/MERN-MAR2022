@@ -105,6 +105,11 @@ const amazonItems = shoppingList
                         .map((item) =>({itemName: item.itemName, price: item.price}))
 // console.log(amazonItems)
 
+
+
+
+
+
 // sort 
 const sortedItems = items.sort()
 console.log(sortedItems)
@@ -114,3 +119,5 @@ console.log(sortedPrices)
 
 const sortedShoppingList = [...shoppingList].sort( (a, b) => a.itemName.toLowerCase() > b.itemName.toLowerCase() ? 1 : -1);
 console.log(sortedShoppingList)
+
+

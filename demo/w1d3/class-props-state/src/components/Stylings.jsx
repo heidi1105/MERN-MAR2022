@@ -28,6 +28,7 @@ export class Stylings extends Component {
             <div className="directImport"> 1: Direct Import</div>
             <div style={inlineStyle1}> 2.1: Inline style</div>
             <div style={inlineStyle2}> 2.2: Inline style</div>
+            <div style={{color: "red"}}> 2.3: direct inline style </div>
             <div className={styles.cssmodules}> 3: css module</div>
 
 

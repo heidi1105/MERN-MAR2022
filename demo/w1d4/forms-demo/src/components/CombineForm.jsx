@@ -5,7 +5,8 @@ const CombineForm = () => {
         username: "",
         age: "",
         password : "",
-        confirm: ""
+        confirm: "",
+        isSubscribed: true
     })    
 
     const [formError, setFormError]=useState({
@@ -26,27 +27,29 @@ const CombineForm = () => {
 
     const handleInput = (e) =>{
         const errors = {...formError}
-        const { name, value} = e.target
+        const keyToUpdate = e.target.name
+        const valToUpdate = (e.target.type==='checkbox')?e.target.checked: e.target.value
+
         setFormState({
             ...formState,
-            [name] : value
+            [keyToUpdate] : valToUpdate
         })
 
-        switch(name){
+        switch(keyToUpdate){
             case 'username':
-                value.length<3?
+                valToUpdate.length<3?
                     errors.username = "Username must be at least 3 characters. ":
                     errors.username = ""
             case 'age':
-                value<0?
+                valToUpdate<0?
                     errors.age = "Age must be positive":
                     errors.age = ""
             case 'password':
-                value.length<8?
+                valToUpdate.length<8?
                     errors.password = "Password must be at least 8 characters":
                     errors.password = ""
             case 'confirm':
-                value !== formState.password?
+                valToUpdate !== formState.password?
                     errors.confirm = "Password must match" :
                     errors.confirm = ""       
         }
@@ -84,9 +87,12 @@ const CombineForm = () => {
         </div>
         <div>
             <label> Confirm Password </label>
-            <input type="confirm" name="confirm" onChange={handleInput} />
+            <input type="password" name="confirm" onChange={handleInput} />
             <p> {formError.confirm}</p>
-  
+        </div>
+        <div>
+            <label> Subscribing to marketing messages </label>
+            <input type="checkbox" name="isSubscribed" onChange={handleInput} checked={formState.isSubscribed} />
         </div>
         <button>Submit</button>
     </form>
